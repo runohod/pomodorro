@@ -1,3 +1,5 @@
+import { TimerPage } from "@/pages/timer";
+
 export const App = () => {
-  return <h1>25:00</h1>;
+  return <TimerPage />;
 };
