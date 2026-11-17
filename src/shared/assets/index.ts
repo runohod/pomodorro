@@ -1,0 +1,1 @@
+export { default as settingsIcon } from './img/settings.jpg';
