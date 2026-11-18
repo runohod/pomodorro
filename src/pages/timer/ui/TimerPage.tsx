@@ -91,7 +91,7 @@ export const TimerPage = () => {
           </div>
         </section>
 
-        <aside className="flex min-w-0 flex-col gap-4 text-[#241f2c]">
+        <div className="flex min-w-0 flex-col gap-4 text-[#241f2c]">
           <section className="rounded-3xl border border-[#e7e1da] bg-[#fffdfb] p-5">
             <h2 className="text-xl font-bold">Сегодня</h2>
 
@@ -154,7 +154,7 @@ export const TimerPage = () => {
               </div>
             </div>
           </section>
-        </aside>
+        </div>
       </div>
     </main>
   );
