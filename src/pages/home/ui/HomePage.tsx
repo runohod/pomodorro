@@ -1,7 +1,7 @@
 import { settingsIcon } from "@/shared/assets";
-import { TimerDial } from "./TimerDial";
+import { TimerPanel } from "@/widgets/timer";
 
-export const TimerPage = () => {
+export const HomePage = () => {
   return (
     <main className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
       <section className="">
@@ -35,61 +35,7 @@ export const TimerPage = () => {
       </section>
 
       <div className="mt-6 grid grid-cols-1 items-start gap-5 md:grid-cols-[1.9fr_1fr]">
-        <section className="min-w-0 rounded-3xl bg-[#241f2c] p-4 text-[#fff8f4] shadow-lg sm:p-6">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <h2 className="font-mono text-xs uppercase tracking-widest">
-              Таймер
-            </h2>
-            <span className="rounded-full border border-[#47414f] bg-[#302938] px-3 py-1 font-mono text-xs uppercase">
-              Готов
-            </span>
-          </div>
-
-          <div
-            role="group"
-            aria-label="Режим таймера"
-            className="grid grid-cols-3 gap-1 rounded-xl bg-[#302938] p-1"
-          >
-            <button
-              type="button"
-              aria-pressed={true}
-              className="rounded-lg bg-[#ffab87] px-2 py-2 text-xs font-semibold text-[#241f2c] sm:text-sm"
-            >
-              Фокус
-            </button>
-            <button
-              type="button"
-              aria-pressed={false}
-              className="rounded-lg px-2 py-2 text-xs hover:bg-[#403749] sm:text-sm"
-            >
-              Короткий
-            </button>
-            <button
-              type="button"
-              aria-pressed={false}
-              className="rounded-lg px-2 py-2 text-xs hover:bg-[#403749] sm:text-sm"
-            >
-              Длинный
-            </button>
-          </div>
-
-          <TimerDial />
-
-          <div className="flex flex-wrap justify-center gap-3">
-            <button
-              type="button"
-              className="rounded-full bg-[#ffab87] px-10 py-3 text-sm font-semibold text-[#241f2c] hover:bg-[#ffc0a4]"
-            >
-              Старт
-            </button>
-            <button
-              type="button"
-              className="rounded-full border border-[#47414f] bg-[#302938] px-5 py-3 text-sm hover:bg-[#403749]"
-            >
-              Сброс
-            </button>
-          </div>
-        </section>
+        <TimerPanel />
 
         <div className="flex min-w-0 flex-col gap-4 text-[#241f2c]">
           <section className="rounded-3xl border border-[#e7e1da] bg-[#fffdfb] p-5">
@@ -104,8 +50,7 @@ export const TimerPage = () => {
               <div className="rounded-xl bg-[#f1eee9] p-3">
                 <p className="text-xs text-[#655e6c]">В фокусе</p>
                 <p className="mt-2 font-mono text-3xl font-semibold">
-                  0
-                  <span className="ml-1 font-sans text-xs font-normal">мин</span>
+                  0<span className="ml-1 font-sans text-xs font-normal">мин</span>
                 </p>
               </div>
             </div>

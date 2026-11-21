@@ -1,5 +1,5 @@
-import { TimerPage } from "@/pages/timer";
+import { HomePage } from "@/pages/home";
 
 export const App = () => {
-  return <TimerPage />;
+  return <HomePage />;
 };
