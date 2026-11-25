@@ -4,7 +4,7 @@ import { TimerModeSwitch } from "./TimerModeSwitch";
 import { useTimer } from "../model/useTimer";
 
 export const TimerPanel = () => {
-  const { mode, setMode } = useTimer();
+  const { mode, setMode, durationSeconds, status, toggleTimer } = useTimer();
 
   return (
     <section className="min-w-0 rounded-3xl bg-[#241f2c] p-4 text-[#fff8f4] shadow-lg sm:p-6">
@@ -19,9 +19,9 @@ export const TimerPanel = () => {
 
       <TimerModeSwitch mode={mode} onModeChange={setMode} />
 
-      <TimerDial />
+      <TimerDial mode={mode} durationSeconds={durationSeconds}/>
 
-      <TimerControls />
+      <TimerControls status={status}  onToggle={toggleTimer}/>
     </section>
   );
 };

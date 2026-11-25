@@ -1,4 +1,17 @@
-export const TimerDial = () => {
+import type { TimerMode } from "@/widgets/timer/model/useTimer";
+type TimerDialProps = { mode: TimerMode, durationSeconds: number };
+
+const modeLabels = {
+  focus: "Фокус",
+  shortBreak: "Короткий",
+  longBreak: "Длинный",
+};
+
+export const TimerDial = ({ mode, durationSeconds }: TimerDialProps) => {
+
+  const minutes = Math.floor(durationSeconds / 60);
+  const seconds = durationSeconds % 60;
+
   return (
     <div className="relative mx-auto my-6 aspect-square w-64 max-w-full">
       <div
@@ -12,10 +25,10 @@ export const TimerDial = () => {
           className="absolute -top-1 left-1/2 size-2 -translate-x-1/2 rounded-full bg-[#ffab87]"
         />
         <span className="font-mono text-xs tracking-widest text-[#ffab87]">
-          ФОКУС
+          {modeLabels[mode]}
         </span>
         <span className="font-mono text-5xl font-bold tabular-nums sm:text-6xl">
-          25:00
+          {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
         </span>
         <span className="font-mono text-xs tracking-widest text-[#c9c0d0]">
           МИН / СЕК
