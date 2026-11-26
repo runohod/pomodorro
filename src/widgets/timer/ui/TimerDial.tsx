@@ -1,5 +1,5 @@
 import type { TimerMode } from "@/widgets/timer/model/useTimer";
-type TimerDialProps = { mode: TimerMode, durationSeconds: number };
+type TimerDialProps = { mode: TimerMode, remainingSeconds: number };
 
 const modeLabels = {
   focus: "Фокус",
@@ -7,10 +7,10 @@ const modeLabels = {
   longBreak: "Длинный",
 };
 
-export const TimerDial = ({ mode, durationSeconds }: TimerDialProps) => {
+export const TimerDial = ({ mode, remainingSeconds }: TimerDialProps) => {
 
-  const minutes = Math.floor(durationSeconds / 60);
-  const seconds = durationSeconds % 60;
+  const minutes = Math.floor(remainingSeconds / 60);
+  const seconds = remainingSeconds % 60;
 
   return (
     <div className="relative mx-auto my-6 aspect-square w-64 max-w-full">

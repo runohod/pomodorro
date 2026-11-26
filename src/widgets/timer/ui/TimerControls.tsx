@@ -1,6 +1,6 @@
 import type { TimerStatus } from "../model/useTimer";
 
-type TimerControlsProps = { status: TimerStatus, onToggle: () => void };
+type TimerControlsProps = { status: TimerStatus, onToggle: () => void, onReset: () => void };
 
 const statusLabels = {
   ready: "Старт",
@@ -8,7 +8,7 @@ const statusLabels = {
   paused: "Продолжить",
 };
 
-export const TimerControls = ({ status, onToggle }: TimerControlsProps) => {
+export const TimerControls = ({ status, onToggle, onReset }: TimerControlsProps) => {
   return (
     <div className="flex flex-wrap justify-center gap-3">
       <button
@@ -21,6 +21,7 @@ export const TimerControls = ({ status, onToggle }: TimerControlsProps) => {
       <button
         type="button"
         className="rounded-full border border-[#47414f] bg-[#302938] px-5 py-3 text-sm hover:bg-[#403749]"
+        onClick={onReset}
       >
         Сброс
       </button>
